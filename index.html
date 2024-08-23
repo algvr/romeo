@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="We present ROMEO, a method for reconstructing 3D human-object interaction models from images by  integrating the flexibility of optimization-based methods and the effectiveness of foundation models in a plug-and-play fashion.">
+  <meta name="keywords" content="ldmoa">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROMEO</title>
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <style type="text/css">
+    .publication-authors .author-block sup {
+      margin-left: 2px;
+    }
+    .section_baseline_comparison {
+      margin-top: 30px;
+    }
+    .medium-text-size {
+      font-size: 20px;
+    }
+    .diagram a {
+      cursor: zoom-in;
+    }
+    .button.is-normal {
+      font-size: 1.1rem;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-72PW1FZDE4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-72PW1FZDE4');
+  </script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ROMEO: Revisiting Optimization Methods for Reconstructing 3D Human-Object Interaction Models From Images</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="mailto:alexey.gavryushin@inf.ethz.ch">Alexey Gavryushin</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="mailto:yifei.liu@uzh.ch">Yifei Liu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="mailto:huangd@student.ethz.ch">Daoji Huang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yenlingkuo.com/">Yen-Ling Kuo</a><sup>3</sup>,</span><br>
+            <span class="author-block">
+              <a href="https://scholar.google.co.uk/citations?user=pZPD0hMAAAAJ">Julien Valentin</a><sup>4</sup>,</span>
+             <span class="author-block">
+              <a href="https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html">Luc Van Gool</a><sup>1,5,6</sup>,</span>
+            <span class="author-block">
+              <a href="https://ait.ethz.ch/people/hilliges/">Otmar Hilliges</a><sup>1</sup>,</span>
+             <span class="author-block">
+              <a href="https://xiwang1212.github.io/homepage/">Xi Wang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> ETH Zurich</span>
+            <span class="author-block"><sup>2</sup> Univ. of Zurich</span>
+            <span class="author-block"><sup>3</sup> Univ. of Virginia</span>
+            <span class="author-block"><sup>4</sup> Microsoft Research</span>
+            <span class="author-block"><sup>5</sup> KU Leuven</span>
+            <span class="author-block"><sup>6</sup> INSAIT, Sofia</span>
+            <br>        
+            <span class="author-block"> 
+              <a href="https://sites.google.com/view/t-cap-2024/home">T-CAP @ ECCV 2024</a></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="static/pdfs/romeo.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+               <span class="link-block">
+                <a href="https://github.com/algvr/romeo" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span> 
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="diagram">
+      <a href="static/images/method_figure.png" target="_blank"><img src="static/images/method_figure.png" alt="Overview" width="760px" /></a>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="medium-text-size has-text-justified">
+          <p>
+            We present ROMEO, a method for reconstructing 3D human-object interaction models from images. Depth-size ambiguities caused by unknown object and human sizes make the joint reconstruction of humans and objects into a plausible configuration matching the observed image a difficult task. Data-driven methods struggle with reconstructing 3D human-object interaction models when it comes to unseen object categories or object shapes, due to the difficulty of obtaining sufficient and diverse 3D training data, and often even of acquiring object meshes for training. To address these challenges, we propose ROMEO, a novel method that does not require any manual human-object contact annotations or 3D data supervision. ROMEO integrates the flexibility of optimization-based methods and the effectiveness of foundation models with large modeling capacity in a plug-and-play fashion. It further incorporates a novel depth-based loss term and largely simplifies the optimization objective of previous methods, eliminating the requirement for manual annotations of contacts and object scales and rendering object-category–specific parameter finetuning unnecessary. We quantify the improvement of ROMEO over existing state-of-the-art methods on two human-object interaction datasets, BEHAVE and InterCap, both quantitatively and qualitatively. We further demonstrate the generalization ability of ROMEO on in-the-wild images.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section_example_outputs">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Example outputs</h2>
+        <div class="diagram">
+            <a href="static/images/reconstructions.png" target="_blank"><img src="static/images/reconstructions.png" alt="Example outputs" width="760px" /></a>
+        </div>
+        
+        <h2 class="medium-text-size has-text-centered" style="margin-top: 15px;">
+            We visualize input images, initial scene reconstructions showing strong depth-size ambiguities when viewed from different viewpoints, and improved final reconstructions after our joint optimization step reasoning about the human-object relationships using depth estimation.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section_baseline_comparison">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Baseline comparison</h2>
+        <div class="diagram">
+          <a href="static/images/baseline_comparison.png" target="_blank"><img src="static/images/baseline_comparison.png" alt="Baseline comparison" width="760px" /></a>
+        </div>
+        
+        <h2 class="medium-text-size has-text-centered" style="margin-top: 15px;">
+          We compare the results of our method ROMEO with PHOSA (Zhang et al., 2020) on the BEHAVE dataset. We show front and side views of the initial results and the final results after joint optimization of each method. Our joint optimization improves the initial estimations in recovering plausible contacts with more plausible depth relationships between humans and objects.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre>
+<code>@inproceedings{
+  gavryushin2024romeo,
+  title={ROMEO: Revisiting Optimization Methods for Reconstructing 3D Human-Object Interaction Models From Images},
+  author={Gavryushin, Alexey and Liu, Yifei and Huang, Daoji and Kuo, Yen-Ling and Valentin, Julien and van Gool, Luc and Hilliges, Otmar and Wang, Xi},
+  booktitle={T-CAP Workshop at ECCV 2024},
+  year={2024},
+  url={https://romeo.github.io/}
+}</code></pre>
+  </div>
+</section>
+
+</body>
+</html>
